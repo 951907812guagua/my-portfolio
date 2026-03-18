@@ -113,6 +113,7 @@ import donglin6thImg from "./assets/dl.png";
 import gjaqImg from "./assets/gjaq.png";
 import jwImg from "./assets/jw.png";
 import taizhouCoverImg from "./assets/taizhou-cover.png";
+import honghuiCoverImg from "./assets/honghui-cover.png";
 
 type MainCategory = "设计作品" | "摄影作品" | "视频作品";
 type SubCategory = "园林制图" | "公众号封面" | "海报" | "公众号长图" | "人像" | "风景" | "长视频" | "短视频" | "全部";
@@ -348,6 +349,18 @@ const generateWorks = (): WorkItem[] => {
     date: "2026.01",
     intro: "协同记者完成前期策划、脚本润色及后期制作全流程，浏览达120w+。",
     videoUrl: "https://h.xinhuaxmt.com/vh512/share/12943455?docid=12943455&newstype=1001&d=135251e&channel=weixin"
+  });
+
+  works.push({
+    id: id++,
+    title: "直面掌门人：洪汇新材",
+    mainCategory: "视频作品",
+    subCategory: "长视频",
+    image: honghuiCoverImg,
+    description: "参与素材内容筛选，视频剪辑制作。",
+    date: "2025.12",
+    intro: "参与素材内容筛选，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
   });
 
   works.push({
