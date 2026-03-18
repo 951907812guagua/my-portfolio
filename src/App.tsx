@@ -118,6 +118,13 @@ import jianfaCoverImg from "./assets/jianfa-cover.png";
 import jinCoverImg from "./assets/jin-cover.png";
 import hegaoCoverImg from "./assets/hegao-cover.png";
 import sazhiCoverImg from "./assets/sazhi-cover.png";
+import ipo2CoverImg from "./assets/ipo2-cover.png";
+import ipo1CoverImg from "./assets/ipo1-cover.png";
+import ipo3CoverImg from "./assets/ipo3-cover.png";
+import wl2CoverImg from "./assets/wl2-cover.png";
+import wl1CoverImg from "./assets/wl1-cover.png";
+import zlCoverImg from "./assets/zl-cover.png";
+import szysCoverImg from "./assets/szys-cover.png";
 
 type MainCategory = "设计作品" | "摄影作品" | "视频作品";
 type SubCategory = "园林制图" | "公众号封面" | "海报" | "公众号长图" | "人像" | "风景" | "长视频" | "短视频" | "全部";
@@ -364,7 +371,7 @@ const generateWorks = (): WorkItem[] => {
     description: "参与素材内容筛选，视频剪辑制作。",
     date: "2025.12",
     intro: "参与素材内容筛选，视频剪辑制作。",
-    videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
+    videoUrl: "https://www.alipan.com/s/nvQqMEC9jAD"
   });
 
   works.push({
@@ -405,6 +412,42 @@ const generateWorks = (): WorkItem[] => {
 
   works.push({
     id: id++,
+    title: "IPO：恒坤新材",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: ipo2CoverImg,
+    description: "参与视频剪辑制作。",
+    date: "2025.11",
+    intro: "参与视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/vYFCyrpQgzC"
+  });
+
+  works.push({
+    id: id++,
+    title: "IPO：强一股份",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: ipo1CoverImg,
+    description: "参与现场拍摄，视频剪辑制作。",
+    date: "2025.12",
+    intro: "参与现场拍摄，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/DMLwsBbroM7"
+  });
+
+  works.push({
+    id: id++,
+    title: "IPO：林平发展",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: ipo3CoverImg,
+    description: "参与视频剪辑制作。",
+    date: "2026.02",
+    intro: "参与视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/xiSE1peKMQS"
+  });
+
+  works.push({
+    id: id++,
     title: "直面掌门人：建发新兴",
     mainCategory: "视频作品",
     subCategory: "长视频",
@@ -412,18 +455,55 @@ const generateWorks = (): WorkItem[] => {
     description: "参与前期拍摄，素材内容筛选，视频剪辑制作。",
     date: "2025.12",
     intro: "参与前期拍摄，素材内容筛选，视频剪辑制作。",
-    videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
+    videoUrl: "https://www.alipan.com/s/xiSE1peKMQS"
   });
 
   works.push({
     id: id++,
-    title: "短视频作品展示",
+    title: "上证资讯",
     mainCategory: "视频作品",
     subCategory: "短视频",
-    image: "https://picsum.photos/seed/shortvideo/1200/800",
-    description: "短视频作品",
-    date: "2026.02",
-    intro: "短视频作品展示",
+    image: wl2CoverImg,
+    description: "参与视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/zPcm43BBJFa"
+  });
+
+  works.push({
+    id: id++,
+    title: "上证资讯",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: wl1CoverImg,
+    description: "参与视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/fwXAgqKMG72"
+  });
+
+  works.push({
+    id: id++,
+    title: "上证资讯",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: zlCoverImg,
+    description: "参与视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/bnDtgHhFUst"
+  });
+
+  works.push({
+    id: id++,
+    title: "上证有数",
+    mainCategory: "视频作品",
+    subCategory: "短视频",
+    image: szysCoverImg,
+    description: "参与数据校对，视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与数据校对，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/i4bDSwRBw5d"
   });
 
   return works;
@@ -605,8 +685,8 @@ export default function App() {
               transition={{ delay: 0.5 }}
               className="flex flex-col gap-2"
             >
-              <span className="font-serif italic text-4xl text-accent">Visual Creator & Designer</span>
-              <span className="micro-label">Based in China / Available Worldwide</span>
+              <span className="font-serif italic text-4xl text-accent">Creativity & Adaptability & Learnability</span>
+              <span className="micro-label">2026 / AVAILABLE FOR WORK</span>
             </motion.div>
           </div>
         </section>
@@ -854,7 +934,7 @@ export default function App() {
 
       <footer className="py-12 px-6 border-t border-ink/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <span className="micro-label">© 2026 ZHANG JIARUN</span>
-        <span className="micro-label">Visual Creator & Designer</span>
+        <span className="micro-label">Creativity & Adaptability & Learnability</span>
       </footer>
 
       {/* Modal */}
