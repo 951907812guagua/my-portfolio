@@ -13,7 +13,9 @@ import {
   Menu,
   ArrowRight,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Grid,
+  List
 } from "lucide-react";
 
 import liuTangImg from "./assets/liu-tang.jpg";
@@ -85,7 +87,7 @@ import gg7 from "./assets/gg-7.jpg";
 import gg8 from "./assets/gg-8.jpg";
 
 // The following images were not found in the assets folder, using placeholders for now
-const donglin6thImg = "https://picsum.photos/seed/dl6th/1200/1800";
+import donglin6thImg from "./assets/dl.png";
 import gjaqImg from "./assets/gjaq.png";
 import jwImg from "./assets/jw.png";
 import taizhouCoverImg from "./assets/taizhou-cover.png";
@@ -294,6 +296,7 @@ const ALL_WORKS = generateWorks();
 export default function App() {
   const [mainCat, setMainCat] = useState<MainCategory>("设计作品");
   const [subCat, setSubCat] = useState<SubCategory>("全部");
+  const [viewMode, setViewMode] = useState<"list" | "grid">("list");
   const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -596,25 +599,33 @@ export default function App() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap justify-end gap-3">
-                  {subCategories[mainCat].map((sub) => (
-                    <button
-                      key={sub}
-                      onClick={() => setSubCat(sub)}
-                      className={`px-4 py-1 rounded-full border text-[10px] uppercase tracking-tighter transition-all ${
-                        subCat === sub 
-                          ? "bg-white text-accent border-white" 
-                          : "bg-transparent text-white/60 border-white/20 hover:border-white/60 hover:text-white"
-                      }`}
-                    >
-                      {sub}
-                    </button>
-                  ))}
+                <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap justify-end gap-3">
+                    {subCategories[mainCat].map((sub) => (
+                      <button
+                        key={sub}
+                        onClick={() => setSubCat(sub)}
+                        className={`px-4 py-1 rounded-full border text-[10px] uppercase tracking-tighter transition-all ${
+                          subCat === sub 
+                            ? "bg-white text-accent border-white" 
+                            : "bg-transparent text-white/60 border-white/20 hover:border-white/60 hover:text-white"
+                        }`}
+                      >
+                        {sub}
+                      </button>
+                    ))}
+                  </div>
+                  <button 
+                    onClick={() => setViewMode(viewMode === 'list' ? 'grid' : 'list')}
+                    className="p-2 rounded-full border border-white/20 text-white/60 hover:border-white/60 hover:text-white transition-all"
+                  >
+                    {viewMode === 'list' ? <Grid size={16} /> : <List size={16} />}
+                  </button>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className={`grid ${viewMode === 'list' ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'} gap-12`}>
               <AnimatePresence mode="popLayout">
                 {filteredWorks.map((work, index) => (
                   <motion.div
@@ -645,7 +656,7 @@ export default function App() {
                     </div>
                     <div className="flex justify-between items-start">
                       <div>
-                        <h3 className="font-display font-black text-3xl uppercase mb-2">{work.title}</h3>
+                        <h3 className={`font-display font-black ${viewMode === 'list' ? 'text-3xl' : 'text-xl'} uppercase mb-2`}>{work.title}</h3>
                         <span className="micro-label text-white/60">{work.subCategory}</span>
                       </div>
                       <span className="font-serif italic text-xl">0{index + 1}</span>
@@ -756,7 +767,7 @@ export default function App() {
                   className={`p-3 transition-all rounded-full border border-white/10 backdrop-blur-md ${showInfo ? 'bg-accent text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}
                   title="Toggle Info"
                 >
-                  <div className="w-6 h-6 flex items-center justify-center font-serif italic font-bold">i</div>
+                  <div className="w-6 h-6 flex items-center justify-center font-bold">详</div>
                 </button>
                 <button 
                   onClick={() => setSelectedWork(null)}
@@ -874,18 +885,7 @@ export default function App() {
                     <p className="text-white/80 leading-relaxed text-sm md:text-base mb-6">
                       {selectedWork.modalIntros ? selectedWork.modalIntros[currentImageIndex] : selectedWork.intro}
                     </p>
-                    {selectedWork.videoUrl && (
-                      <a 
-                        href={selectedWork.videoUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-full font-display font-black uppercase tracking-tighter hover:bg-white hover:text-accent transition-all group"
-                      >
-                        <Play size={20} fill="currentColor" />
-                        观看完整视频
-                        <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      </a>
-                    )}
+
                   </motion.div>
                 )}
               </AnimatePresence>
