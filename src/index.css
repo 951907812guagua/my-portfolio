@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Playfair Display", serif;
+  
+  --color-bg: #f5f5f5;
+  --color-ink: #1a1a1a;
+  --color-accent: #ff4e00;
+  --color-accent-muted: rgba(255, 78, 0, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink antialiased selection:bg-accent selection:text-white;
+  }
+}
+
+@layer components {
+  .editorial-title {
+    @apply font-display font-black leading-[0.85] tracking-tighter uppercase;
+  }
+  
+  .nav-link {
+    @apply font-sans font-bold text-sm uppercase tracking-wider hover:text-accent transition-colors;
+  }
+
+  .micro-label {
+    @apply font-sans text-[10px] font-bold uppercase tracking-[0.2em] opacity-60;
+  }
+}
