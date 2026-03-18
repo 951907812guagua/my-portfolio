@@ -114,6 +114,7 @@ import gjaqImg from "./assets/gjaq.png";
 import jwImg from "./assets/jw.png";
 import taizhouCoverImg from "./assets/taizhou-cover.png";
 import honghuiCoverImg from "./assets/honghui-cover.png";
+import jianfaCoverImg from "./assets/jianfa-cover.png";
 
 type MainCategory = "设计作品" | "摄影作品" | "视频作品";
 type SubCategory = "园林制图" | "公众号封面" | "海报" | "公众号长图" | "人像" | "风景" | "长视频" | "短视频" | "全部";
@@ -360,6 +361,18 @@ const generateWorks = (): WorkItem[] => {
     description: "参与素材内容筛选，视频剪辑制作。",
     date: "2025.12",
     intro: "参与素材内容筛选，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
+  });
+
+  works.push({
+    id: id++,
+    title: "直面掌门人：建发新兴",
+    mainCategory: "视频作品",
+    subCategory: "长视频",
+    image: jianfaCoverImg,
+    description: "参与前期拍摄，素材内容筛选，视频剪辑制作。",
+    date: "2025.12",
+    intro: "参与前期拍摄，素材内容筛选，视频剪辑制作。",
     videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
   });
 
@@ -711,7 +724,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className={`grid ${viewMode === 'list' ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'} gap-12`}>
+            <div className={viewMode === 'list' ? 'grid grid-cols-1 md:grid-cols-2 gap-12' : 'columns-2 md:columns-3 lg:columns-4 gap-12'}>
               <AnimatePresence mode="popLayout">
                 {filteredWorks.map((work, index) => (
                   <motion.div
@@ -721,7 +734,7 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="group cursor-pointer"
+                    className={`group cursor-pointer ${viewMode === 'grid' ? 'break-inside-avoid mb-12' : ''}`}
                     onClick={() => {
                       setSelectedWork(work);
                       setCurrentImageIndex(0);
