@@ -115,6 +115,9 @@ import jwImg from "./assets/jw.png";
 import taizhouCoverImg from "./assets/taizhou-cover.png";
 import honghuiCoverImg from "./assets/honghui-cover.png";
 import jianfaCoverImg from "./assets/jianfa-cover.png";
+import jinCoverImg from "./assets/jin-cover.png";
+import hegaoCoverImg from "./assets/hegao-cover.png";
+import sazhiCoverImg from "./assets/sazhi-cover.png";
 
 type MainCategory = "设计作品" | "摄影作品" | "视频作品";
 type SubCategory = "园林制图" | "公众号封面" | "海报" | "公众号长图" | "人像" | "风景" | "长视频" | "短视频" | "全部";
@@ -362,6 +365,42 @@ const generateWorks = (): WorkItem[] => {
     date: "2025.12",
     intro: "参与素材内容筛选，视频剪辑制作。",
     videoUrl: "https://www.alipan.com/s/Wk6ENGWVDVn"
+  });
+
+  works.push({
+    id: id++,
+    title: "直面掌门人：金现代",
+    mainCategory: "视频作品",
+    subCategory: "长视频",
+    image: jinCoverImg,
+    description: "参与素材内容筛选，视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与素材内容筛选，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/kSna8g46xfW"
+  });
+
+  works.push({
+    id: id++,
+    title: "上证面对面：和高资本",
+    mainCategory: "视频作品",
+    subCategory: "长视频",
+    image: hegaoCoverImg,
+    description: "参与素材内容筛选，视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与素材内容筛选，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/YSKvhoc3ygD"
+  });
+
+  works.push({
+    id: id++,
+    title: "上证面对面：飒智智能",
+    mainCategory: "视频作品",
+    subCategory: "长视频",
+    image: sazhiCoverImg,
+    description: "参与素材内容筛选，视频剪辑制作。",
+    date: "2026.01",
+    intro: "参与素材内容筛选，视频剪辑制作。",
+    videoUrl: "https://www.alipan.com/s/qkKBv8cpEfa"
   });
 
   works.push({
