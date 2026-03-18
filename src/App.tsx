@@ -86,6 +86,28 @@ import gg6 from "./assets/gg-6.jpg";
 import gg7 from "./assets/gg-7.jpg";
 import gg8 from "./assets/gg-8.jpg";
 
+// 圆明园
+import ymy1 from "./assets/ymy-1.jpg";
+import ymy2 from "./assets/ymy-2.jpg";
+import ymy3 from "./assets/ymy-3.jpg";
+import ymy4 from "./assets/ymy-4.jpg";
+
+// 巴黎
+import bl1 from "./assets/bl-1.jpg";
+import bl2 from "./assets/bl-2.jpg";
+import bl3 from "./assets/bl-3.jpg";
+import bl4 from "./assets/bl-4.jpg";
+
+// 敦煌
+import dh1 from "./assets/dh-1.jpg";
+import dh2 from "./assets/dh-2.jpg";
+import dh3 from "./assets/dh-3.jpg";
+
+// 其他
+import llwy from "./assets/llwy.jpg";
+import yhy from "./assets/yhy.jpg";
+import mts from "./assets/mts.jpg";
+
 // The following images were not found in the assets folder, using placeholders for now
 import donglin6thImg from "./assets/dl.png";
 import gjaqImg from "./assets/gjaq.png";
@@ -254,7 +276,7 @@ const generateWorks = (): WorkItem[] => {
 
   works.push({
     id: id++,
-    title: "北京故宫",
+    title: "故宫",
     mainCategory: "摄影作品",
     subCategory: "风景",
     image: gg1,
@@ -262,6 +284,57 @@ const generateWorks = (): WorkItem[] => {
     description: "北京故宫的红墙黄瓦。",
     date: "2023.03",
     intro: "拍摄于北京故宫"
+  });
+
+  works.push({
+    id: id++,
+    title: "圆明园",
+    mainCategory: "摄影作品",
+    subCategory: "风景",
+    image: ymy1,
+    images: [ymy1, ymy2, ymy3, ymy4],
+    description: "拍摄于北京圆明园遗址。",
+    date: "2023.03",
+    intro: "拍摄于北京圆明园遗址"
+  });
+
+  works.push({
+    id: id++,
+    title: "巴黎",
+    mainCategory: "摄影作品",
+    subCategory: "风景",
+    image: bl1,
+    images: [bl1, bl2, bl3, bl4],
+    description: "拍摄于法国巴黎。",
+    date: "2025.01",
+    intro: "拍摄于法国巴黎"
+  });
+
+  works.push({
+    id: id++,
+    title: "敦煌",
+    mainCategory: "摄影作品",
+    subCategory: "风景",
+    image: dh1,
+    images: [dh1, dh2, dh3],
+    description: "拍摄于甘肃敦煌。",
+    date: "2025.04",
+    intro: "拍摄于甘肃敦煌"
+  });
+
+  works.push({
+    id: id++,
+    title: "其他",
+    mainCategory: "摄影作品",
+    subCategory: "风景",
+    image: llwy,
+    images: [llwy, yhy, mts],
+    description: "一些其他的风景摄影作品。",
+    date: "2023-2025",
+    intro: "", // This group has individual intros
+    modalTitles: ["柳浪闻莺", "颐和园", "马蹄寺"],
+    modalDates: ["2023.03", "2023.03", "2025.03"],
+    modalIntros: ["拍摄于杭州西湖风景区", "拍摄于北京颐和园", "拍摄于甘肃张掖马蹄寺"]
   });
   
   // 视频作品
